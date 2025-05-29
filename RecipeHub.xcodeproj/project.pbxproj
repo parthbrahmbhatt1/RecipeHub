@@ -17,6 +17,7 @@
 		17126B4B2DE8EC66009D14CD /* RecipeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17126B4A2DE8EC66009D14CD /* RecipeModel.swift */; };
 		17126B4E2DE8ED17009D14CD /* RecipeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17126B4D2DE8ED17009D14CD /* RecipeService.swift */; };
 		17126B502DE8EDC3009D14CD /* APIEndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17126B4F2DE8EDC3009D14CD /* APIEndPoints.swift */; };
+		17126B522DE8F52E009D14CD /* RecipeListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17126B512DE8F52E009D14CD /* RecipeListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		17126B4A2DE8EC66009D14CD /* RecipeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeModel.swift; sourceTree = "<group>"; };
 		17126B4D2DE8ED17009D14CD /* RecipeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeService.swift; sourceTree = "<group>"; };
 		17126B4F2DE8EDC3009D14CD /* APIEndPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndPoints.swift; sourceTree = "<group>"; };
+		17126B512DE8F52E009D14CD /* RecipeListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +157,7 @@
 		17126B492DE8EC2F009D14CD /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				17126B512DE8F52E009D14CD /* RecipeListViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -300,6 +303,7 @@
 			files = (
 				17126B202DE8EBE1009D14CD /* ContentView.swift in Sources */,
 				17126B1E2DE8EBE1009D14CD /* RecipeHubApp.swift in Sources */,
+				17126B522DE8F52E009D14CD /* RecipeListViewModel.swift in Sources */,
 				17126B4B2DE8EC66009D14CD /* RecipeModel.swift in Sources */,
 				17126B502DE8EDC3009D14CD /* APIEndPoints.swift in Sources */,
 				17126B4E2DE8ED17009D14CD /* RecipeService.swift in Sources */,
