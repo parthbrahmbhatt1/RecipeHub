@@ -7,25 +7,20 @@
 
 import Foundation
 
-struct RecipeResponse: Decodable {
+struct RecipeResponse: Codable {
     let recipes: [Recipe]
 }
 
-struct Recipe: Identifiable, Decodable {
-    let id: UUID
-    let name: String
+struct Recipe: Codable, Identifiable {
+    var id: String { uuid }
     let cuisine: String
-    let photoUrlLarge: URL
-    let photoUrlSmall: URL
-    let sourceUrl: URL?
-    let youtubeUrl: URL?
+    let name: String
+    let photo_url_large: URL
+    let photo_url_small: URL
+    let uuid: String
+    let source_url: URL?
+    let youtube_url: URL?
 
-    enum CodingKeys: String, CodingKey {
-        case cuisine, name
-        case photoUrlLarge = "photo_url_large"
-        case photoUrlSmall = "photo_url_small"
-        case id = "uuid"
-        case sourceUrl = "source_url"
-        case youtubeUrl = "youtube_url"
-    }
+    // Custom init to validate URLs? Codable auto does URL parsing
+    // If any URL is invalid in JSON, decoding will fail (throws)
 }

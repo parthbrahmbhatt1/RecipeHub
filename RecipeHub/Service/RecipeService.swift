@@ -10,25 +10,18 @@ import Foundation
 enum RecipeServiceError: Error {
     case malformedData
     case networkError(Error)
+    case invalidResponse
 }
 
-final class RecipeService {
-    static let shared = RecipeService()
-
-    func getRecipes() async throws -> [Recipe] {
-        guard let url = APIEndpoints.url else {
-            fatalError("Invalid URL")
-        }
-        
+class RecipeService {
+    
+    func getRecipes(from url: URL) async throws -> [Recipe] {
         do {
             let (data, _) = try await URLSession.shared.data(from: url)
-
-            guard let decoded = try? JSONDecoder().decode([Recipe].self, from: data) else {
-                throw RecipeServiceError.malformedData
-            }
-            return decoded
+            let decoded = try JSONDecoder().decode(RecipeResponse.self, from: data)
+            return decoded.recipes
         } catch {
-            throw RecipeServiceError.networkError(error)
+            throw RecipeServiceError.malformedData
         }
     }
 }
