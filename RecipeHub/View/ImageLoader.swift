@@ -20,7 +20,7 @@ class ImageLoader: ObservableObject {
     func load() {
         guard task == nil else { return }
         task = Task {
-            if let cachedImage = await DiskImageCache.shared.image(for: url) {
+            if let cachedImage = await ImageCache.shared.image(for: url) {
                 self.image = cachedImage
                 return
             }
@@ -28,7 +28,7 @@ class ImageLoader: ObservableObject {
                 let (data, _) = try await URLSession.shared.data(from: url)
                 if let uiImage = UIImage(data: data) {
                     self.image = uiImage
-                    await DiskImageCache.shared.save(uiImage, for: url)
+                    await ImageCache.shared.save(uiImage, for: url)
                 }
             } catch {
                 print("Error:", error)

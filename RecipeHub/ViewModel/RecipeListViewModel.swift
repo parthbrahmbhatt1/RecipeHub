@@ -7,7 +7,6 @@
 
 import Foundation
 
-@MainActor
 class RecipesViewModel: ObservableObject {
     @Published private(set) var recipes: [Recipe] = []
     @Published private(set) var isLoading = false
@@ -21,6 +20,7 @@ class RecipesViewModel: ObservableObject {
         self.url = url
     }
 
+    @MainActor
     func refresh() async {
         isLoading = true
         errorMessage = nil

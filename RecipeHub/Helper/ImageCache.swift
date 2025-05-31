@@ -7,8 +7,8 @@
 
 import UIKit
 
-actor DiskImageCache {
-    static let shared = DiskImageCache()
+actor ImageCache {
+    static let shared = ImageCache()
 
     private let cacheDirectory: URL
     private var memoryCache: [URL: UIImage] = [:]

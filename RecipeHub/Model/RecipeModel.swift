@@ -20,7 +20,4 @@ struct Recipe: Codable, Identifiable {
     let uuid: String
     let source_url: URL?
     let youtube_url: URL?
-
-    // Custom init to validate URLs? Codable auto does URL parsing
-    // If any URL is invalid in JSON, decoding will fail (throws)
 }
