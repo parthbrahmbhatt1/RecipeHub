@@ -7,17 +7,49 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "C5168201-3389-4D0D-BC56-F8501699F94A"
+            uuid = "3AAA856A-380E-4D32-9032-E3B75EA5B014"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "RecipeHub/ViewModel/RecipeListViewModel.swift"
+            filePath = "RecipeHub/View/ImageLoader.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
-            landmarkName = "filteredRecipes"
-            landmarkType = "24">
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "load()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "3AAA856A-380E-4D32-9032-E3B75EA5B014 - f812182e7f5ac97"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(5) suspend resume partial function for closure #1 @Sendable () async -&gt; () in RecipeHub.ImageLoader.load() -&gt; ()"
+                  moduleName = "RecipeHub"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/parthbrahmbhatt/Desktop/RecipeHub/RecipeHub/View/ImageLoader.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "219">
+               </Location>
+               <Location
+                  uuid = "3AAA856A-380E-4D32-9032-E3B75EA5B014 - ef10d60dd1ae7091"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(7) suspend resume partial function for closure #1 @Sendable () async -&gt; () in RecipeHub.ImageLoader.load() -&gt; ()"
+                  moduleName = "RecipeHub"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/parthbrahmbhatt/Desktop/RecipeHub/RecipeHub/View/ImageLoader.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "50">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

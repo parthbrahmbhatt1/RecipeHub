@@ -26,6 +26,7 @@
 		17126B6B2DEA63EE009D14CD /* RecipeViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17126B6A2DEA63EE009D14CD /* RecipeViewModelTest.swift */; };
 		17126B6D2DEA6443009D14CD /* MockRecipeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17126B6C2DEA6443009D14CD /* MockRecipeService.swift */; };
 		17126B6F2DEA82E6009D14CD /* RecipeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17126B6E2DEA82E6009D14CD /* RecipeDetailView.swift */; };
+		17126B712DEA9015009D14CD /* RecipeDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17126B702DEA9015009D14CD /* RecipeDetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 		17126B6A2DEA63EE009D14CD /* RecipeViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewModelTest.swift; sourceTree = "<group>"; };
 		17126B6C2DEA6443009D14CD /* MockRecipeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRecipeService.swift; sourceTree = "<group>"; };
 		17126B6E2DEA82E6009D14CD /* RecipeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailView.swift; sourceTree = "<group>"; };
+		17126B702DEA9015009D14CD /* RecipeDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				17126B512DE8F52E009D14CD /* RecipeListViewModel.swift */,
+				17126B702DEA9015009D14CD /* RecipeDetailViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -342,6 +345,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				17126B5F2DEA57FE009D14CD /* RecipeRowView.swift in Sources */,
+				17126B712DEA9015009D14CD /* RecipeDetailViewModel.swift in Sources */,
 				17126B202DE8EBE1009D14CD /* RecipeListView.swift in Sources */,
 				17126B1E2DE8EBE1009D14CD /* RecipeHubApp.swift in Sources */,
 				17126B522DE8F52E009D14CD /* RecipeListViewModel.swift in Sources */,

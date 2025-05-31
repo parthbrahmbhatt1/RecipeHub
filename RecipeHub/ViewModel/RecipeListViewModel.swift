@@ -12,6 +12,7 @@ class RecipesViewModel: ObservableObject {
     @Published private(set) var isLoading = false
     @Published private(set) var errorMessage: String? = nil
     @Published var searchText: String = ""
+    @Published var selectedCuisine: String? = nil
     
     private let service: RecipeService
     private let url: URL
@@ -22,13 +23,25 @@ class RecipesViewModel: ObservableObject {
         self.url = url
     }
     
+    var cuisines: [String] {
+        let all = Set(recipes.map { $0.cuisine })
+        return Array(all).sorted()
+    }
+    
     var filteredRecipes: [Recipe] {
-            guard !searchText.isEmpty else { return recipes }
-            return recipes.filter {
-                $0.name.localizedCaseInsensitiveContains(searchText) ||
-                $0.cuisine.localizedCaseInsensitiveContains(searchText)
+            var filtered = recipes
+
+            if let selected = selectedCuisine {
+                filtered = filtered.filter { $0.cuisine == selected }
             }
+
+            if !searchText.isEmpty {
+                filtered = filtered.filter { $0.name.localizedCaseInsensitiveContains(searchText) }
+            }
+
+            return filtered
         }
+
 
 
     @MainActor
