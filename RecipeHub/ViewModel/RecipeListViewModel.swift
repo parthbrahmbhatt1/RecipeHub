@@ -11,6 +11,8 @@ class RecipesViewModel: ObservableObject {
     @Published private(set) var recipes: [Recipe] = []
     @Published private(set) var isLoading = false
     @Published private(set) var errorMessage: String? = nil
+    @Published var searchText: String = ""
+    
     private let service: RecipeService
     private let url: URL
 
@@ -19,6 +21,15 @@ class RecipesViewModel: ObservableObject {
         self.service = service
         self.url = url
     }
+    
+    var filteredRecipes: [Recipe] {
+            guard !searchText.isEmpty else { return recipes }
+            return recipes.filter {
+                $0.name.localizedCaseInsensitiveContains(searchText) ||
+                $0.cuisine.localizedCaseInsensitiveContains(searchText)
+            }
+        }
+
 
     @MainActor
     func refresh() async {

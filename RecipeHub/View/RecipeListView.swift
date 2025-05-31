@@ -13,7 +13,7 @@ struct RecipesListView: View {
     var body: some View {
         NavigationView {
             Group {
-                if viewModel.isLoading && viewModel.recipes.isEmpty {
+                if viewModel.isLoading && viewModel.filteredRecipes.isEmpty {
                     ProgressView("Loading Recipes...")
                 } else if let error = viewModel.errorMessage {
                     VStack(spacing: 20) {
@@ -25,7 +25,7 @@ struct RecipesListView: View {
                             }
                         }
                     }
-                } else if viewModel.recipes.isEmpty {
+                } else if viewModel.filteredRecipes.isEmpty {
                     VStack(spacing: 20) {
                         Text("No recipes available.")
                             .font(.headline)
@@ -37,16 +37,29 @@ struct RecipesListView: View {
                         }
                     }
                 } else {
-                    List(viewModel.recipes) { recipe in
-                        RecipeRowView(recipe: recipe)
+                    ScrollView {
+                        LazyVStack(alignment: .leading, spacing: 0) {
+                            ForEach(viewModel.filteredRecipes) { recipe in
+                                NavigationLink(destination: RecipeDetailView(recipe: recipe)) {
+                                    RecipeRowView(recipe: recipe)
+                                        .padding(.leading, 10)
+                                    Spacer()
+                                    Image(systemName: "chevron.right")
+                                                            .foregroundColor(.gray)
+                                                            .padding(.trailing, 10)
+
+                                }
+                                Divider()
+                            }
+                        }
                     }
-                    .listStyle(.plain)
                     .refreshable {
                         await viewModel.refresh()
                     }
                 }
             }
             .navigationTitle("Recipes")
+            .searchable(text: $viewModel.searchText, prompt: "Search recipes")
             .task {
                 if viewModel.recipes.isEmpty {
                     await viewModel.refresh()

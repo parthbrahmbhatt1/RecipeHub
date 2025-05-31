@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-
 struct RecipeRowView: View {
     let recipe: Recipe
     @StateObject private var imageLoader: ImageLoader
@@ -17,7 +16,7 @@ struct RecipeRowView: View {
     }
 
     var body: some View {
-        HStack(spacing: 16) {
+        HStack(alignment: .top, spacing: 12) {
             if let image = imageLoader.image {
                 Image(uiImage: image)
                     .resizable()
@@ -35,9 +34,10 @@ struct RecipeRowView: View {
                     )
             }
 
-            VStack(alignment: .leading, spacing: 6) {
+            VStack(alignment: .leading, spacing: 4) {
                 Text(recipe.name)
                     .font(.headline)
+                    .foregroundColor(.primary)
                 Text(recipe.cuisine)
                     .font(.subheadline)
                     .foregroundColor(.secondary)
