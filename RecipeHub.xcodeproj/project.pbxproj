@@ -22,11 +22,10 @@
 		17126B622DEA59A3009D14CD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17126B612DEA59A3009D14CD /* Constants.swift */; };
 		17126B642DEA5CA3009D14CD /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17126B632DEA5CA3009D14CD /* ImageLoader.swift */; };
 		17126B672DEA5EE8009D14CD /* RecipeServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17126B662DEA5EE8009D14CD /* RecipeServiceTest.swift */; };
-		17126B692DEA60CE009D14CD /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17126B682DEA60CE009D14CD /* MockURLProtocol.swift */; };
+		17126B692DEA60CE009D14CD /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17126B682DEA60CE009D14CD /* MockURLSession.swift */; };
 		17126B6B2DEA63EE009D14CD /* RecipeViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17126B6A2DEA63EE009D14CD /* RecipeViewModelTest.swift */; };
 		17126B6D2DEA6443009D14CD /* MockRecipeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17126B6C2DEA6443009D14CD /* MockRecipeService.swift */; };
 		17126B6F2DEA82E6009D14CD /* RecipeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17126B6E2DEA82E6009D14CD /* RecipeDetailView.swift */; };
-		17126B712DEA9015009D14CD /* RecipeDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17126B702DEA9015009D14CD /* RecipeDetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,11 +64,10 @@
 		17126B612DEA59A3009D14CD /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		17126B632DEA5CA3009D14CD /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		17126B662DEA5EE8009D14CD /* RecipeServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeServiceTest.swift; sourceTree = "<group>"; };
-		17126B682DEA60CE009D14CD /* MockURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLProtocol.swift; sourceTree = "<group>"; };
+		17126B682DEA60CE009D14CD /* MockURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSession.swift; sourceTree = "<group>"; };
 		17126B6A2DEA63EE009D14CD /* RecipeViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewModelTest.swift; sourceTree = "<group>"; };
 		17126B6C2DEA6443009D14CD /* MockRecipeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRecipeService.swift; sourceTree = "<group>"; };
 		17126B6E2DEA82E6009D14CD /* RecipeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailView.swift; sourceTree = "<group>"; };
-		17126B702DEA9015009D14CD /* RecipeDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,7 +181,6 @@
 			isa = PBXGroup;
 			children = (
 				17126B512DE8F52E009D14CD /* RecipeListViewModel.swift */,
-				17126B702DEA9015009D14CD /* RecipeDetailViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -192,7 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				17126B4D2DE8ED17009D14CD /* RecipeService.swift */,
-				17126B682DEA60CE009D14CD /* MockURLProtocol.swift */,
+				17126B682DEA60CE009D14CD /* MockURLSession.swift */,
 				17126B6C2DEA6443009D14CD /* MockRecipeService.swift */,
 			);
 			path = Service;
@@ -345,7 +342,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				17126B5F2DEA57FE009D14CD /* RecipeRowView.swift in Sources */,
-				17126B712DEA9015009D14CD /* RecipeDetailViewModel.swift in Sources */,
 				17126B202DE8EBE1009D14CD /* RecipeListView.swift in Sources */,
 				17126B1E2DE8EBE1009D14CD /* RecipeHubApp.swift in Sources */,
 				17126B522DE8F52E009D14CD /* RecipeListViewModel.swift in Sources */,
@@ -354,7 +350,7 @@
 				17126B542DE8F9D0009D14CD /* ImageCache.swift in Sources */,
 				17126B6F2DEA82E6009D14CD /* RecipeDetailView.swift in Sources */,
 				17126B6D2DEA6443009D14CD /* MockRecipeService.swift in Sources */,
-				17126B692DEA60CE009D14CD /* MockURLProtocol.swift in Sources */,
+				17126B692DEA60CE009D14CD /* MockURLSession.swift in Sources */,
 				17126B4E2DE8ED17009D14CD /* RecipeService.swift in Sources */,
 				17126B622DEA59A3009D14CD /* Constants.swift in Sources */,
 			);

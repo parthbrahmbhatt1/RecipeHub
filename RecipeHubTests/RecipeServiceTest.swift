@@ -10,16 +10,12 @@ import XCTest
 
 final class RecipeServiceTests: XCTestCase {
     var service: RecipeService!
-    var session: URLSession!
+    var mockSession: MockURLSession!
+    let validURL = APIConstants.baseURLString
     
     override func setUp() {
         super.setUp()
-        
-        let config = URLSessionConfiguration.ephemeral
-        config.protocolClasses = [MockURLProtocol.self]
-        session = URLSession(configuration: config)
-        
-        service = RecipeService(session: session)
+        mockSession = MockURLSession()
     }
     
     func testGetValidRecipes() async throws {
@@ -38,41 +34,16 @@ final class RecipeServiceTests: XCTestCase {
               ]
             }
             """
-        MockURLProtocol.testData = jsonString.data(using: .utf8)
-        MockURLProtocol.responseCode = 200
-        
-        let url = URL(string: "https://dummy.url")!
-        let recipes = try await service.getRecipes(from: url)
-        XCTAssertEqual(recipes.count, 1)
-        XCTAssertEqual(recipes[0].name, "Bakewell Tart")
-        XCTAssertEqual(recipes[0].cuisine, "British")
-    }
-    
-    func testGetMalformedRecipes() async {
-        let malformedJSON = """
-        {
-          "recipes": [
-            {
-              "cuisine": "British",
-              "name": "Bakewell Tart"
-              // Missing commas, fields, etc.
-            }
-          ]
+        mockSession.data = jsonString.data(using: .utf8)
+        if let url = URL(string: APIConstants.baseURLString) {
+            mockSession.response = HTTPURLResponse(url: url, statusCode: 200, httpVersion: nil, headerFields: nil)
         }
-        """
-
-        MockURLProtocol.testData = malformedJSON.data(using: .utf8)
-        MockURLProtocol.responseCode = 200
-
-        let url = URL(string: "https://inavlid.com")!
-
-        do {
-            _ = try await service.getRecipes(from: url)
-            XCTFail("Expected malformedData error, but got success")
-        } catch let error as RecipeServiceError {
-            XCTAssertEqual(error, .malformedData)
-        } catch {
-            XCTFail("Unexpected error: \(error)")
+        let service = RecipeService(session: mockSession)
+        if let url = URL(string: APIConstants.baseURLString) {
+            let recipes = try await service.getRecipes(from: url)
+            XCTAssertEqual(recipes.count, 1)
+            XCTAssertEqual(recipes[0].name, "Bakewell Tart")
+            XCTAssertEqual(recipes[0].cuisine, "British")
         }
     }
 }

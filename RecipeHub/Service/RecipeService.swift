@@ -7,6 +7,12 @@
 
 import Foundation
 
+protocol URLSessionProtocol {
+    func data(from url: URL) async throws -> (Data, URLResponse)
+}
+
+extension URLSession: URLSessionProtocol {}
+
 enum RecipeServiceError: Error, Equatable {
     case malformedData
     case networkError(Error)
@@ -26,9 +32,9 @@ enum RecipeServiceError: Error, Equatable {
 
 class RecipeService {
     
-    private let session: URLSession
+    private let session: URLSessionProtocol
     
-    init(session: URLSession = .shared) {
+    init(session: URLSessionProtocol = URLSession.shared) {
         self.session = session
     }
     
@@ -40,7 +46,7 @@ class RecipeService {
                   200..<300 ~= httpResponse.statusCode else {
                 throw RecipeServiceError.invalidResponse
             }
-
+            
             let decoded = try JSONDecoder().decode(RecipeResponse.self, from: data)
             return decoded.recipes
         } catch let decodingError as DecodingError {

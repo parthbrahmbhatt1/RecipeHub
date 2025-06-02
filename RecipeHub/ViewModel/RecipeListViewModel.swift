@@ -29,21 +29,19 @@ class RecipesViewModel: ObservableObject {
     }
     
     var filteredRecipes: [Recipe] {
-            var filtered = recipes
-
-            if let selected = selectedCuisine {
-                filtered = filtered.filter { $0.cuisine == selected }
-            }
-
-            if !searchText.isEmpty {
-                filtered = filtered.filter { $0.name.localizedCaseInsensitiveContains(searchText) }
-            }
-
-            return filtered
+        var filtered = recipes
+        
+        if let selected = selectedCuisine {
+            filtered = filtered.filter { $0.cuisine == selected }
         }
-
-
-
+        
+        if !searchText.isEmpty {
+            filtered = filtered.filter { $0.name.localizedCaseInsensitiveContains(searchText) }
+        }
+        
+        return filtered
+    }
+    
     @MainActor
     func refresh() async {
         isLoading = true
