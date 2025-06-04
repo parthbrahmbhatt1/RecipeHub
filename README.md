@@ -14,7 +14,7 @@ RecipeHub is a SwiftUI-based iOS application that fetches and displays recipes f
 ## Architecture
 - MVVM
 - Async / Await
-- SwiftUI views with @StateObject and @ObservedObject
+- SwiftUI views with @StateObject and ObservableObject Protocol
 - Custom ImageLoader using @MainActor
 
 
